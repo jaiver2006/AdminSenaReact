@@ -1,41 +1,36 @@
+// Importa NavLink para crear enlaces de navegación con estilo activo.
 import { NavLink } from "react-router-dom";
+// Importa la imagen del logo del SENA desde la carpeta de assets.
+import logoSena from "../assets/Img/sena-logo.png";
 
+// Sidebar representa el menú lateral del panel administrativo.
 function Sidebar() {
-  // Centraliza las opciones del menu para evitar repetir enlaces en el JSX.
-  const menuItems = [
-    { path: "/areas", label: "Áreas", icon: "fa-layer-group" },
-    { path: "/computadores", label: "Computadores", icon: "fa-desktop" },
-    { path: "/centros", label: "Centros", icon: "fa-building" },
-    { path: "/cursos", label: "Cursos", icon: "fa-book" },
-    {
-      path: "/instructores",
-      label: "Instructores",
-      icon: "fa-chalkboard-user",
-    },
-    { path: "/aprendices", label: "Aprendices", icon: "fa-user-graduate" },
-    { path: "/noticias", label: "Noticias", icon: "fa-newspaper" },
-    { path: "/informacion", label: "Quiénes somos", icon: "fa-circle-info" },
-    { path: "/uniforme", label: "Uniforme SENA", icon: "fa-shirt" },
+  // Array con todas las opciones del menú y su ruta y icono.
+  const items = [
+    { to: "/areas", label: "Áreas", icon: "fa-layer-group" },
+    { to: "/computers", label: "Computadores", icon: "fa-desktop" },
+    { to: "/training-centers", label: "Centros", icon: "fa-building" },
+    { to: "/courses", label: "Cursos", icon: "fa-book" },
+    { to: "/teachers", label: "Instructores", icon: "fa-chalkboard-user" },
+    { to: "/apprentices", label: "Aprendices", icon: "fa-user-graduate" },
   ];
 
   return (
     <aside className="sidebar">
       <div className="logo">
         <h1>SENA</h1>
-        <img src="/src/assets/Img/sena-logo.png" alt="Logo SENA" width="100" />
+        <img src={logoSena} alt="Logo SENA" width="100" />
         <p>Panel Administrativo</p>
       </div>
 
       <ul className="menu">
-        {menuItems.map((item) => (
-          <li key={item.path}>
-            {/* NavLink agrega la clase active segun la ruta actual. */}
+        {items.map((item) => (
+          <li key={item.to}>
             <NavLink
-              to={item.path}
+              to={item.to}
               className={({ isActive }) => (isActive ? "active" : "")}
             >
-              <i className={`fas ${item.icon}`} />
-              <span>{item.label}</span>
+              <i className={`fas ${item.icon}`} /> {item.label}
             </NavLink>
           </li>
         ))}

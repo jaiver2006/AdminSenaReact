@@ -1,85 +1,190 @@
+/* Reinicia los márgenes y rellenos por defecto para que todos los elementos se comporten igual en todos los navegadores. */
 * {
   margin: 0;
   padding: 0;
+  /* box-sizing: border-box hace que el ancho y alto incluyan el padding y el borde, evitando desbordes. */
   box-sizing: border-box;
+  /* Define la fuente base del proyecto para mantener la identidad visual. */
   font-family: Arial, Helvetica, sans-serif;
 }
 
+/* El fondo general de toda la aplicación y el color del texto principal. */
 body {
   background: #f4f7fc;
   color: #1f2937;
 }
 
+/* Quita el subrayado predeterminado de los enlaces para mantener un diseño limpio. */
 a {
   text-decoration: none;
 }
 
+/* Estilo base para los botones con cursor apuntador y sin borde para un diseño uniforme. */
 button {
   cursor: pointer;
   border: none;
 }
 
+/* Hace que el layout del panel administrativo use fila horizontal con altura completa. */
+.admin-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Estilo del sidebar o menú lateral verde oscuro con separación interna. */
+.sidebar {
+  width: 260px;
+  background: #0f2a1e;
+  color: white;
+  padding: 20px 15px;
+}
+
+/* Centra el contenido del logo del menú lateral. */
+.logo {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+/* Estilo del texto principal del logo SENA. */
+.logo h1 {
+  color: #9ed0af;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+/* Texto secundario debajo del logo para describir el panel. */
+.logo p {
+  color: #94b89e;
+}
+
+/* El menú lateral se organiza como una lista vertical con espacios entre opciones. */
+.menu {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Cada opción del menú se muestra como un bloque con estilo visual y padding. */
+.menu li a {
+  display: block;
+  padding: 12px 10px;
+  border-radius: 10px;
+  color: white;
+  transition: 0.2s;
+  font-size: 15px;
+}
+
+/* Crea el efecto visual cuando el usuario pasa el mouse o la opción está activa. */
+.menu li a:hover,
+.menu li a.active {
+  background: #39a900;
+}
+
+/* El contenido principal ocupa el espacio restante y tiene fondo gris claro. */
+.main {
+  flex: 1;
+  padding: 30px;
+  background: #f1f5f9;
+}
+
+/* Espaciado del encabezado del panel administrativo. */
+.header-panel {
+  margin-bottom: 25px;
+}
+
+/* Tamaño y estilo del título principal del panel. */
+.header-panel h2 {
+  font-size: 2rem;
+  color: #0f2a15;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+/* Subtítulo del panel con un tono más suave. */
+.header-panel p {
+  color: #648b7f;
+  font-size: 1rem;
+}
+
+/* Contenedor blanco que agrupa la tabla y mantiene la apariencia del listado. */
 .container-table {
-  width: 80%;
-  max-width: 1100px;
+  width: 90%;
+  max-width: 1300px;
   background: white;
   padding: 30px;
   border-radius: 12px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-  margin: 30px auto;
 }
 
+/* Título del listado centrado con color verde para coincidir con la identidad SENA. */
 .container-table h1 {
   text-align: center;
   color: #25eb71;
   margin-bottom: 25px;
 }
 
+/* La tabla usa el ancho completo del contenedor y una distribución fija de columnas. */
 .table-custom {
   width: 100%;
   border-collapse: collapse;
-  overflow: hidden;
-  border-radius: 10px;
+  table-layout: fixed;
 }
 
+/* Encabezado de la tabla con fondo verde y letras blancas. */
 .table-custom thead {
   background: #25eb53;
   color: white;
 }
 
+/* Estilo general para celdas y encabezados de la tabla. */
 .table-custom th {
   padding: 15px;
   text-align: left;
   font-size: 18px;
 }
 
+/* Cada fila tiene un borde inferior para separar visualmente los registros. */
 .table-custom td {
   padding: 15px;
   border-bottom: 1px solid #ddd;
 }
 
+/* Alterna el fondo de las filas para mejorar la legibilidad. */
 .table-custom tbody tr:nth-child(even) {
   background: #f8fafc;
 }
 
+/* Al pasar el mouse sobre una fila, se resalta para dar feedback visual. */
 .table-custom tbody tr:hover {
   background: #dbeafe;
   transition: 0.3s;
 }
 
+/* Estilo de la columna de número para que quede centrada y con ancho fijo. */
 .numero {
   width: 70px;
   text-align: center;
   font-weight: bold;
 }
 
+/* La columna de acciones se comporta como flex para alinear los botones horizontalmente. */
 .acciones {
   display: flex;
-  gap: 10px;
+  justify-content: flex-end;
   align-items: center;
-  white-space: nowrap;
+  gap: 10px;
+  flex-wrap: wrap;
+  min-width: 320px;
 }
 
+/* La última columna de la tabla recibe ancho específico para contener los botones de acción. */
+.table-custom th:last-child,
+.table-custom td:last-child {
+  width: 420px;
+}
+
+/* Estilo base compartido por todos los botones de acciones. */
 .btn-show,
 .btn-edit,
 .btn-delete,
@@ -93,40 +198,49 @@ button {
   display: inline-block;
 }
 
+/* El botón Mostrar usa color verde para representar una acción positiva y visible. */
 .btn-show {
   background: #25eb67;
 }
 
+/* Cambia el tono del botón Mostrar al pasar el mouse. */
 .btn-show:hover {
   background: #1dd852;
 }
 
+/* El botón Editar usa color amarillo/naranja para diferenciarlo de las otras opciones. */
 .btn-edit {
   background: #f59e0b;
 }
 
+/* Cambia el tono del botón Editar al pasar el mouse. */
 .btn-edit:hover {
   background: #d97706;
 }
 
+/* El botón Eliminar y el primario usan rojo para indicar acciones destructivas o importantes. */
 .btn-delete,
 .btn-primary {
   background: #dc2626;
 }
 
+/* Cambia el tono del botón Eliminar al pasar el mouse. */
 .btn-delete:hover,
 .btn-primary:hover {
   background: #b91c1c;
 }
 
+/* El botón secundario usa un azul más sobrio para acciones complementarias. */
 .btn-secondary {
   background: #4f46e5;
 }
 
+/* Cambia el tono del botón secundario al pasar el mouse. */
 .btn-secondary:hover {
   background: #4338ca;
 }
 
+/* El total de registros se alinea a la derecha para cerrar visualmente la tabla. */
 .total {
   margin-top: 20px;
   text-align: right;
@@ -134,6 +248,7 @@ button {
   color: #555;
 }
 
+/* Estilo para el formulario que comparte la misma paleta visual del proyecto. */
 .form-page {
   width: 70%;
   max-width: 700px;
@@ -152,7 +267,6 @@ button {
 
 .form-grid {
   display: grid;
-  grid-template-columns: 1fr;
   gap: 18px;
 }
 
@@ -173,7 +287,6 @@ button {
   border: 1px solid #d1d5db;
   border-radius: 8px;
   font-size: 16px;
-  background: #fff;
 }
 
 .form-actions {
@@ -218,6 +331,18 @@ button {
 }
 
 @media (max-width: 900px) {
+  .admin-layout {
+    display: block;
+  }
+
+  .sidebar {
+    width: 100%;
+  }
+
+  .main {
+    padding: 20px;
+  }
+
   .container-table,
   .form-page,
   .detail-card {

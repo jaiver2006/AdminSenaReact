@@ -1,12 +1,18 @@
-import Sidebar from "../Sidebar";
+import Sidebar from '../Sidebar';
 
 function AdminLayout({ children }) {
   return (
     <div className="admin-layout">
-      {/* El menu permanece visible mientras cambia el contenido de cada ruta. */}
       <Sidebar />
 
-      <main className="main">{children}</main>
+      <main className="main">
+        <div className="header-panel">
+          <h2>Panel de Administración</h2>
+          <p>Gestión Académica SENA</p>
+        </div>
+
+        {children}
+      </main>
     </div>
   );
 }
