@@ -1,10 +1,13 @@
-import { Link } from 'react-router-dom';
+// Link permite regresar al listado de instructores.
+import { Link } from "react-router-dom";
 
+// Muestra el detalle del instructor seleccionado.
 function TeachersShow() {
   return (
     <div className="detail-card">
       <h1>Detalle del Instructor</h1>
 
+      {/* La cuadrícula agrupa la identificación y la información laboral. */}
       <div className="detail-grid">
         <div className="detail-item">
           <strong>ID</strong>
@@ -27,8 +30,11 @@ function TeachersShow() {
         </div>
       </div>
 
+      {/* Acción para volver a consultar todos los instructores. */}
       <div className="form-actions">
-        <Link to="/teachers" className="btn-secondary">Volver</Link>
+        <Link to="/teachers" className="btn-secondary">
+          Volver
+        </Link>
       </div>
     </div>
   );

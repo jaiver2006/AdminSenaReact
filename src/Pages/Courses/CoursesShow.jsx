@@ -1,10 +1,13 @@
-import { Link } from 'react-router-dom';
+// Link permite regresar al listado de cursos.
+import { Link } from "react-router-dom";
 
+// Muestra la información principal de un curso seleccionado.
 function CoursesShow() {
   return (
     <div className="detail-card">
       <h1>Detalle del Curso</h1>
 
+      {/* Cada tarjeta de esta cuadrícula representa un dato del curso. */}
       <div className="detail-grid">
         <div className="detail-item">
           <strong>ID</strong>
@@ -27,8 +30,11 @@ function CoursesShow() {
         </div>
       </div>
 
+      {/* Acción para volver a consultar todos los cursos. */}
       <div className="form-actions">
-        <Link to="/courses" className="btn-secondary">Volver</Link>
+        <Link to="/courses" className="btn-secondary">
+          Volver
+        </Link>
       </div>
     </div>
   );

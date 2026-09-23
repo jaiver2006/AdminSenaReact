@@ -35,6 +35,7 @@ import TrainingCentersList from "./Pages/TrainingCenters/TrainingCentersList.jsx
 import TrainingCentersCreate from "./Pages/TrainingCenters/TrainingCentersCreate.jsx";
 import TrainingCentersEdit from "./Pages/TrainingCenters/TrainingCentersEdit.jsx";
 import TrainingCentersShow from "./Pages/TrainingCenters/TrainingCentersShow.jsx";
+import Dashboard from "./Pages/Dashboard.jsx";
 
 // Este componente centraliza todas las rutas del proyecto.
 // Cada Route define la URL y el componente que debe mostrarse al navegar.
@@ -43,6 +44,7 @@ function App() {
     <AdminLayout>
       {/* Routes contiene todas las rutas disponibles de la aplicación. */}
       <Routes>
+        <Route path="/" element={<Dashboard />} />
         {/* Ruta para listar áreas. */}
         <Route path="/areas" element={<AreasList />} />
         <Route path="/areas/create" element={<AreasCreate />} />

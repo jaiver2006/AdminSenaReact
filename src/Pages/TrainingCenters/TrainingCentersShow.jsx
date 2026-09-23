@@ -1,10 +1,13 @@
-import { Link } from 'react-router-dom';
+// Link permite regresar al listado de centros.
+import { Link } from "react-router-dom";
 
+// Muestra el detalle de un centro de formación seleccionado.
 function TrainingCentersShow() {
   return (
     <div className="detail-card">
       <h1>Detalle del Centro</h1>
 
+      {/* La cuadrícula presenta la identificación y ubicación del centro. */}
       <div className="detail-grid">
         <div className="detail-item">
           <strong>ID</strong>
@@ -22,8 +25,11 @@ function TrainingCentersShow() {
         </div>
       </div>
 
+      {/* Acción para volver a consultar todos los centros. */}
       <div className="form-actions">
-        <Link to="/training-centers" className="btn-secondary">Volver</Link>
+        <Link to="/training-centers" className="btn-secondary">
+          Volver
+        </Link>
       </div>
     </div>
   );

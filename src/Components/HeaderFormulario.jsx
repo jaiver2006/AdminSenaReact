@@ -1,11 +1,14 @@
+// Encabezado compartido para las pantallas que utilizan el layout de formularios.
 function HeaderFormulario() {
   return (
     <header className="header-formulario">
+      {/* Marca principal y acceso rápido a la página de inicio. */}
       <a href="/" className="brand">
         <i className="fas fa-home" />
         Sistema de Gestión SENA
       </a>
 
+      {/* Navegación secundaria entre los módulos disponibles del sistema. */}
       <nav className="header-menu">
         <a href="/areas">Áreas</a>
         <a href="/computadores">Computadores</a>
@@ -17,6 +20,7 @@ function HeaderFormulario() {
         <a href="/noticias">Noticias</a>
       </nav>
 
+      {/* Identificación visual del usuario que administra la plataforma. */}
       <div className="profile">
         <span className="badge">Administrador</span>
 

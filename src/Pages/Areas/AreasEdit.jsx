@@ -1,19 +1,23 @@
+// Link permite regresar al listado de áreas mediante navegación interna.
 import { Link } from "react-router-dom";
 
+// Presenta el formulario para actualizar los datos de un área existente.
 function AreasEdit() {
   return (
     <div className="form-page">
       <h1>Editar Área</h1>
 
-      {/* Valor inicial de ejemplo; la API deberia proporcionar el registro real. */}
+      {/* El valor inicial simula el registro que normalmente llegaría desde la API. */}
       <form>
         <div className="form-grid">
+          {/* Campo editable con el nombre actual del área seleccionada. */}
           <div className="form-group">
             <label>Nombre del Área</label>
             <input type="text" defaultValue="Desarrollo de software" />
           </div>
         </div>
 
+        {/* Permite cancelar los cambios o confirmar la actualización del área. */}
         <div className="form-actions">
           <Link to="/areas" className="btn-secondary">
             Cancelar

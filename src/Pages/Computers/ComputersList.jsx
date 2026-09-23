@@ -9,6 +9,24 @@ function ComputersList() {
     { id: 1, number: "PC-01", brand: "HP" },
     // Este segundo registro sirve para verificar que la tabla renderiza varias filas.
     { id: 2, number: "PC-02", brand: "Lenovo" },
+    { id: 3, number: "PC-03", brand: "Dell" },
+    { id: 4, number: "PC-04", brand: "Acer" },
+    { id: 5, number: "PC-05", brand: "Asus" },
+    { id: 6, number: "PC-06", brand: "Apple" },
+    { id: 7, number: "PC-07", brand: "HP" },
+    { id: 8, number: "PC-08", brand: "Lenovo" },
+    { id: 9, number: "PC-09", brand: "Dell" },
+    { id: 10, number: "PC-10", brand: "Acer" },
+    { id: 11, number: "PC-11", brand: "Asus" },
+    { id: 12, number: "PC-12", brand: "Apple" },
+    { id: 13, number: "PC-13", brand: "HP" },
+    { id: 14, number: "PC-14", brand: "Lenovo" },
+    { id: 15, number: "PC-15", brand: "Dell" },
+    { id: 16, number: "PC-16", brand: "Acer" },
+    { id: 17, number: "PC-17", brand: "Asus" },
+    { id: 18, number: "PC-18", brand: "Apple" },
+    { id: 19, number: "PC-19", brand: "HP" },
+    { id: 20, number: "PC-20", brand: "Lenovo" },
   ];
 
   // Retorna el JSX que se renderiza en la pantalla del listado.
